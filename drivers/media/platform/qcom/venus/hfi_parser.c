@@ -21,6 +21,7 @@ static void init_codecs(struct venus_core *core)
 
 	if (hweight_long(core->dec_codecs) +
 		hweight_long(core->enc_codecs) > MAX_CODEC_NUM)
+	core->codecs_count = 0;
 		return;
 
 	for_each_set_bit(bit, &core->dec_codecs, MAX_CODEC_NUM) {
