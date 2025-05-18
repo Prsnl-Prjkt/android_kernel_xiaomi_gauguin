@@ -108,15 +108,6 @@ void lpm_disable_for_dev(bool on, char event_dev)
 		pr_err("No support device %d disable lpm\n", event_dev);
 		return;
 	}
-
-	if (on) {
-		lpm_dev_bitmp |= mask;
-		sleep_disabled_dev = !!on;
-	} else {
-		lpm_dev_bitmp &= ~mask;
-		if (lpm_dev_bitmp == 0)
-			sleep_disabled_dev = !!on;
-	}
 }
 EXPORT_SYMBOL(lpm_disable_for_dev);
 #else
