@@ -481,6 +481,7 @@ static int hfi_process_session_cvp_msg(u32 device_id,
 	struct msm_cvp_inst *inst = NULL;
 	struct msm_cvp_core *core;
 	void *session_id;
+	int rc;
 
 	if (!pkt) {
 		dprintk(CVP_ERR, "%s: invalid param\n", __func__);
